@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./AddInput.css"
 import { v4 } from "uuid"
 
+
 function AddInput({
     setTodos, todos
 }) {
@@ -20,6 +21,7 @@ function AddInput({
         ]
         setTodos(updatedTodos);
         setTodo("")
+    
     }
 
     return (
