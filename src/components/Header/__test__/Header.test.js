@@ -10,73 +10,73 @@ test('Should pass title as prop by text', () => {
 });
 
 
-// it('should pass title find by text', async () => {
-//   render(<Header title="todo" />);
+it('should pass title find by text', async () => {
+  render(<Header title="todo" />);
 
-//   const Head = await screen.findByText('todo');
+  const Head = await screen.findByText('todo');
 
-//   expect(Head).toBeInTheDocument();
-// });
-
-
-// test('should pass title as prop by text', () => {
-//   render(<Header title="todo" />);
-
-//   const headerElement = screen.getByText(/todo/i);
-
-//   expect(headerElement).toBeInTheDocument();
-// });
+  expect(Head).toBeInTheDocument();
+});
 
 
-// test('should pass title as prop find by text', async () => {
-//   render(<Header title="todo" />);
+test('should pass title as prop by text', () => {
+  render(<Header title="todo" />);
 
-//   const headerElement = await screen.findByText(/todo/i);
+  const headerElement = screen.getByText(/todo/i);
 
-//   expect(headerElement).toBeInTheDocument();
-// });
-
-
-// test('should not pass title as prop by text', () => {
-//   render(<Header title="todo" />);
-
-//   const headerElement = screen.queryByText(/todoList/i);
-
-//   expect(headerElement).not.toBeInTheDocument();
-// });
+  expect(headerElement).toBeInTheDocument();
+});
 
 
-// test('should pass title as prop by title', () => {
-//   render(<Header title="todo" />);
+test('should pass title as prop find by text', async () => {
+  render(<Header title="todo" />);
 
-//   const headerElement = screen.getByTitle('Header');
+  const headerElement = await screen.findByText(/todo/i);
 
-//   expect(headerElement).toBeInTheDocument();
-// });
-
-
-// test('should pass title as prop by role', () => {
-//   render(<Header />);
-
-//   const headerElement = screen.getAllByRole('heading');
-
-//   expect(headerElement.length).toBe(2);
-// });
+  expect(headerElement).toBeInTheDocument();
+});
 
 
-// test('should pass title as prop by role', () => {
-//   render(<Header />);
+test('should not pass title as prop by text', () => {
+  render(<Header title="todo" />);
 
-//   const headerElement = screen.getByTestId('header-2');
+  const headerElement = screen.queryByText(/todoList/i);
 
-//   expect(headerElement).toBeInTheDocument();
-// });
+  expect(headerElement).not.toBeInTheDocument();
+});
 
 
-// test('should pass title as prop by role', () => {
-//   render(<Header />);
+test('should pass title as prop by title', () => {
+  render(<Header title="todo" />);
 
-//   const headerElement = screen.getByRole('heading');
+  const headerElement = screen.getByTitle('Header');
 
-//   expect(headerElement).toBeInTheDocument();
-// });
+  expect(headerElement).toBeInTheDocument();
+});
+
+
+test('should pass title as prop by role', () => {
+  render(<Header />);
+
+  const headerElement = screen.getAllByRole('heading');
+
+  expect(headerElement.length).toBe(2);
+});
+
+
+test('should pass title as prop by role', () => {
+  render(<Header />);
+
+  const headerElement = screen.getByTestId('header-2');
+
+  expect(headerElement).toBeInTheDocument();
+});
+
+
+test('should pass title as prop by role', () => {
+  render(<Header />);
+
+  const headerElement = screen.getByTestId("header-1");
+
+  expect(headerElement).toBeInTheDocument();
+});
