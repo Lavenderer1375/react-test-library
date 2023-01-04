@@ -10,6 +10,7 @@ const MockTodo = () => {
   );
 };
 
+// Building a function for repetetive works
 const addTask = (tasks) => {
   const inputElement = screen.getByPlaceholderText(/Add a new task here../i);
   const buttonElement = screen.getByRole('button', {
@@ -21,6 +22,7 @@ const addTask = (tasks) => {
   });
 };
 
+// Using a function in a test
 it('should be able to type into input', () => {
   render(<MockTodo />);
   addTask(['wash car']);
@@ -28,13 +30,15 @@ it('should be able to type into input', () => {
   expect(divElement).toBeInTheDocument();
 });
 
-it('should render multiple items noemal', () => {
+// Testing multiple items
+it('should render multiple items normaly', () => {
   render(<MockTodo />);
   addTask(['wash car', 'go shoppiong', ' clean the room']);
   const divElement = screen.queryAllByTestId('task-container');
   expect(divElement.length).toBe(3);
 });
 
+// Using loops in Tests
 it('should render multiple items loop', () => {
   render(<MockTodo />);
   for (let index = 0; index < 100; index++) {
@@ -44,6 +48,7 @@ it('should render multiple items loop', () => {
   expect(divElement.length).toBe(100);
 });
 
+// testing CSS classes
 it('task should not have complete calss  initially ', () => {
   render(<MockTodo />);
   addTask(['wash car']);
@@ -52,6 +57,7 @@ it('task should not have complete calss  initially ', () => {
   expect(divElement).not.toHaveClass('todo-item-active');
 });
 
+// testing CSS classes
 it('task should  have complete calss whene clicked ', () => {
   render(<MockTodo />);
   addTask(['wash car']);
